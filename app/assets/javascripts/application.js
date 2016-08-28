@@ -16,3 +16,8 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+$(document).on("focusin", "input, button, textarea, [contenteditable]", function() {
+  if (document.documentElement.hasAttribute("data-turbolinks-preview")) {
+    this.blur();
+  }
+})
